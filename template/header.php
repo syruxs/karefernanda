@@ -104,6 +104,7 @@ if(isset($_SESSION['carrito'])){
 </header>
 <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" id="menu">
   <a class="navbar-brand" href="#">&nbsp; KAREN FERNANDA</a>
+  <div class="input-group">
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -131,7 +132,25 @@ if(isset($_SESSION['carrito'])){
             <li><a class="dropdown-item" href="category.php?category=<?php echo openssl_encrypt('TEJIDOS', COD, KEY);?>">Tejidos</a></li>
           </ul>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Portafolio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="contac.php">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a href="#log" title="INGRESAR A CUENTA" class="nav-link active" aria-current="page"><i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="mostrarCarrito.php" title="VER CARRITO" class="nav-link active" aria-current="page"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO'])?></a>
+        </li>
       </ul>
     </div>
   </div>
+  <a href="#log" title="INGRESAR A CUENTA" class="navbar-brand"><i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i></a>
+  <a href="mostrarCarrito.php" title="VER CARRITO" class="navbar-brand"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO'])?></a>
+</div>
 </nav>
