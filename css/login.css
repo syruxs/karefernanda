@@ -8,6 +8,8 @@
     background: #000000a9;
     z-index: 999;
     display:none;
+    transition: 1.5s;
+
 }
 .logear:target{
     display: block;

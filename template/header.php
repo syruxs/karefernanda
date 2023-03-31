@@ -1,12 +1,21 @@
 <?php 
 ob_start(); 
-?>
-<?php 
 error_reporting(0);
-session_start(); 
 include("kafer/config.php");
 include("kafer/fer.php");
 include("cart.php");
+?>
+<?php 
+
+session_start(); 
+$ver=$_SESSION['user'];
+$consulta=mysqli_query($conn,"SELECT * FROM `user` WHERE user='$ver'AND estado='activo'");
+
+	while($user_result=mysqli_fetch_array($consulta)){
+      $name=$user_result['name'];
+      $estado=$user_result['estado'];
+	}
+
 
 if(isset($_SESSION['carrito'])){
   $carrito_mio=$_SESSION['carrito'];
@@ -114,7 +123,24 @@ if(isset($_SESSION['carrito'])){
       <li><a href="#">Servicios</a></li>
       <li><a href="#">Portafolio</a></li>
       <li><a href="contac.php">Contacto</a></li>
-      <li><a href="#log" title="INGRESAR A CUENTA"><i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i></a></li>
+      <?php
+      if($estado == 'activo'){
+          echo '
+          <li>
+            <a href="#">'.$name.'</a>
+            <ul>
+              <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Mi Perfil</a></li>
+              <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Pedidos</a></li>
+              <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Config.</a></li>
+              <li><a href="kafer/logout.php"><i class="fa fa-times-circle" aria-hidden="true"></i> Cerrar</a></li>
+            </ul>
+          </li>';
+        }else {
+          echo '
+          <li><a href="#log" title="INGRESAR A CUENTA"><i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i></a></li>
+          ';
+        }
+        ?>
       <li><a href="mostrarCarrito.php" title="VER CARRITO"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO'])?></a></li>
     </ul>
   </nav>
@@ -158,9 +184,19 @@ if(isset($_SESSION['carrito'])){
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="contac.php">Contacto</a>
         </li>
-        <li class="nav-item">
-          <a href="#log" title="INGRESAR A CUENTA" class="nav-link active" aria-current="page"><i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i></a>
-        </li>
+        <?php
+        if($estado == 'activo'){
+          echo '
+          <li class="nav-item dropdown">
+            <a class="nav-link active" href="#">hola</a>
+          </li>';
+        }else {
+          echo '
+          <li class="nav-item">
+            <a href="#log" title="INGRESAR A CUENTA" class="nav-link active" aria-current="page"><i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i></a>
+          </li>';
+        }
+        ?>
         <li class="nav-item">
           <a href="mostrarCarrito.php" title="VER CARRITO" class="nav-link active" aria-current="page"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><?php echo (empty($_SESSION['CARRITO']))?0:count($_SESSION['CARRITO'])?></a>
         </li>
