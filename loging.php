@@ -4,7 +4,7 @@
   </div>
     <div class="login-box">
     <h2>Login</h2>
-        <form class="form-login" action="" method="post">
+        <form class="form-login" action="login.php" method="post">
             <table width="100%">
                 <tr>
                     <td colspan="2">
