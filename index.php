@@ -197,6 +197,8 @@
     }
   ?>
 </section>
+<br>
+<!--paginacion-->
 <nav aria-label="Page navigation example">
     <ul class="pagination">
         <li class="page-item">
@@ -207,7 +209,7 @@
                 }else{
                   if($pagina>1)
                   $ant = $_REQUEST['nume']-1;
-                        echo "<a class='page-link' aria-label='Previous' href='index.php?nume=1'><span aria-hidden='true'>&laquo;</span></a>";
+                        echo "<a class='page-link' href='index.php?nume=1'>Anteior</a>";
                         echo "<li class='page-item'><a class='page-link' href='index.php?nume=".($pagina-1)."'>".$ant."</a></li>";}
                         echo "<li class='page-item active'><a class='page-link'>".$_REQUEST['nume']."</a></li>";
                   $sigui = $_REQUEST['nume'] + 1;
@@ -218,13 +220,13 @@
                         echo "<li class='page-item'><a class='page-link' href='index.php?nume=".($pagina+1)."'>".$sigui."</a></li>";
                   if($pagina<$paginas && $paginas>1)
                         echo "
-                      <li class='page-item'><a class='page-link' aria-label='Next' href='index.php?nume=".ceil($ultima)."'><span aria-hidden='true'>&raquo;</span><span class='sr-only'>next</span></a>
+                      <li class='page-item'><a class='page-link' href='index.php?nume=".ceil($ultima)."'>Siguiente</a>
                       </li>";
             ?>
         </li>
     </ul>
 </nav>
-
+<!--fin paginacion-->
 <!--fin productos-->
 <div class="separator">
   <span></span>
