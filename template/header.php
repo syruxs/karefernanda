@@ -131,7 +131,7 @@ if(isset($_SESSION['carrito'])){
             <ul>
               <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Mi Perfil</a></li>
               <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Pedidos</a></li>
-              <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i> Config.</a></li>
+              <li><a href="setting/config.php"><i class="fa fa-cog" aria-hidden="true"></i> Config.</a></li>
               <li><a href="kafer/logout.php"><i class="fa fa-times-circle" aria-hidden="true"></i> Cerrar</a></li>
             </ul>
           </li>';
