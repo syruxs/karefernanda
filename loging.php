@@ -36,6 +36,8 @@
                 </tr>
             </table>
         </form>
+        <br>
+        <a href="">recuperar contraseña</a>
     </div>
 </div>
 <link rel="stylesheet" href="css/login.css">

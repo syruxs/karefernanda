@@ -140,8 +140,8 @@ if(isset($_SESSION['carrito'])){
           <li>
             <a href="#">'.$name.'</a>
             <ul>
-              <li><a href="#" title="MI PERFIL"><i class="fa fa-user" aria-hidden="true"></i> Mi Perfil</a></li>
-              <li><a href="#" title="VER MIS PEDIDOS"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Pedidos</a></li>
+              <li><a href="setting/perfil.php" title="MI PERFIL"><i class="fa fa-user" aria-hidden="true"></i> Mi Perfil</a></li>
+              <li><a href="setting/misPedidos.php" title="VER MIS PEDIDOS"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Pedidos</a></li>
               <li><a href="setting/config.php" title="IR A MI CONFIGURACIÓN"><i class="fa fa-cog" aria-hidden="true"></i> Config.</a></li>
               <li><a href="setting/admin.php" title="ADMINISTRAR SITIO"><i class="fa fa-cogs" aria-hidden="true"></i> Admin</a></li>
               <li><a href="kafer/logout.php" title="CERRAR SESION"><i class="fa fa-times-circle" aria-hidden="true"></i> Cerrar</a></li>
@@ -197,18 +197,30 @@ if(isset($_SESSION['carrito'])){
           <a class="nav-link active" aria-current="page" href="contac.php">Contacto</a>
         </li>
         <?php
-          if($estado == 'activo'){
+          if($perfil == 'cliente'){
               echo '
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">'.$name.'</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#" title="MI PERFIL"><i class="fa fa-user" aria-hidden="true"></i> Mi Perfil</a></li>
-                  <li><a class="dropdown-item" href="#" title="VER MIS PEDIDOS"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Pedidos</a></li>
+                  <li><a class="dropdown-item" href="setting/perfil.php" title="MI PERFIL"><i class="fa fa-user" aria-hidden="true"></i> Mi Perfil</a></li>
+                  <li><a class="dropdown-item" href="setting/misPedidos.php" title="VER MIS PEDIDOS"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Pedidos</a></li>
                   <li><a class="dropdown-item" href="setting/config.php" title="IR A MI CONFIGURACIÓN"><i class="fa fa-cog" aria-hidden="true"></i> Config.</a></li>
                   <li><a class="dropdown-item" href="kafer/logout.php" title="CERRAR SESION"><i class="fa fa-times-circle" aria-hidden="true"></i> Cerrar</a></li>
                 </ul>
               </li>';
-            }else {
+            }elseif($perfil == 'administrador'){
+              echo '
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">'.$name.'</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="setting/perfil.php" title="MI PERFIL"><i class="fa fa-user" aria-hidden="true"></i> Mi Perfil</a></li>
+                  <li><a class="dropdown-item" href="setting/misPedidos.php" title="VER MIS PEDIDOS"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Pedidos</a></li>
+                  <li><a class="dropdown-item" href="setting/config.php" title="IR A MI CONFIGURACIÓN"><i class="fa fa-cog" aria-hidden="true"></i> Config.</a></li>
+                  <li><a class="dropdown-item" href="setting/admin.php" title="ADMINISTRAR SITIO"><i class="fa fa-cogs" aria-hidden="true"></i> Admin</a></li>
+                  <li><a class="dropdown-item" href="kafer/logout.php" title="CERRAR SESION"><i class="fa fa-times-circle" aria-hidden="true"></i> Cerrar</a></li>
+                </ul>
+              </li>';            }
+            else {
               echo '
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#log" title="INGRESAR A CUENTA"><i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i></a>

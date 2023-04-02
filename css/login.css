@@ -156,7 +156,14 @@
     animation: btn-anim2 1s linear infinite;
     animation-delay: .25s
   }
-  
+  .login-box a {
+    text-decoration: none;
+    color: #818080;
+  }
+  .login-box a:hover{
+    color: #03e9f4;
+    text-decoration: none;
+  }
   @keyframes btn-anim2 {
     0% {
       top: -100%;
