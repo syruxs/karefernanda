@@ -168,7 +168,7 @@
   if($_REQUEST['nume']==''){$_REQUEST['nume']='1';}
   $articulos=mysqli_query($conn, "SELECT * FROM `productos`");
   $num_registros=@mysqli_num_rows($articulos);
-  $registros='4';
+  $registros='9';
   $pagina=$_REQUEST['nume'];
   if(is_numeric($pagina)){$inicio=($pagina-1)*$registros;}else{$inicio=0;}
   $search_product=mysqli_query($conn, "SELECT * FROM `productos` LIMIT $inicio, $registros");

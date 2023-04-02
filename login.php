@@ -11,4 +11,5 @@ $consulta=mysqli_query($conn,"SELECT * FROM `user` WHERE user='$user' and pass='
     session_start();
     $_SESSION['user']=$user;
     header("location:index.php");
+    $ip = file_get_contents('https://ifconfig.me/ip');
 ?>
