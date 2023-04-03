@@ -1,6 +1,6 @@
 <?php session_start(); 
-  include("kafer/config.php");
-  include("kafer/fer.php");
+include("kafer/config.php");
+include("kafer/fer.php");
 error_reporting(0);
 $messaje="";
 
@@ -14,7 +14,7 @@ if(isset($_POST['btnAccion'])){
                 $ID=openssl_decrypt($_POST['ref'],COD,KEY);
                 $messaje.="OK ID correcto".$ID."<br>";
             }else{
-                $messaje.="Upss... ID incorrecto".$ID."<br>";
+                $messaje.="Upss... ID incorrecto".$ID."<br>"; break;
             }
             /*VALIDAMOS EL NOMBRE DEL PRODUCTO*/
             if(is_string(openssl_decrypt($_POST['titulo'],COD,KEY))){
