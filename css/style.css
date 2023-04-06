@@ -125,6 +125,12 @@ a:hover{
     text-align: center;
     padding: 20px;
 }
+.messaje {
+    margin: auto;
+    width: 70%;
+    text-align: center;
+    padding: 20px;
+}
 .contenedor{
     position: fixed;
     top: 200px;
@@ -500,6 +506,7 @@ input[type="submit"] {
 .col-1{
     padding: 10px;
     margin: 10px;	
+    cursor: pointer;
 }
 .col-1 img{
     border: 1px solid #3f3e3e;

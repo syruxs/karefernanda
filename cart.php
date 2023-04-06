@@ -85,7 +85,7 @@ if(isset($_POST['btnAccion'])){
                         );
     
                         $_SESSION['CARRITO'][$NumeroProductos]=$producto;
-                        $messaje="Producto agregado al carrito";
+                        $messaje.="Producto agregado al carrito";
                     }
             }
         break;
@@ -97,7 +97,7 @@ if(isset($_POST['btnAccion'])){
                 foreach($_SESSION['CARRITO'] as $indice=>$producto){
                     if($producto['ID']==$ID){
                         unset($_SESSION['CARRITO'][$indice]);
-                        echo "<script>alert('Elemento borrado...')</script>";
+                        echo "<script>alert('Elemento Eliminado ...')</script>";
                     }
                 }
             }else{

@@ -3,7 +3,7 @@
 <?php   
   include("kafer/config.php");
   include("kafer/fer.php");
-  include("cart.php");
+  require("cart.php");
 
 $id=$_POST['id'];
 
@@ -42,10 +42,12 @@ $buscar_producto=mysqli_query($conn, "SELECT * FROM `productos` WHERE `id_produc
   <hr>
 </div>
 <?php if($messaje!=""){?>
-<div class="alert alert-success d-flex align-items-center" role="alert">
-  <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-  <div>
-    <?php print_r($messaje);?> <a href="mostrarCarrito.php" class="alert-link">Ver Carrito</a>
+  <div class="messaje">
+  <div class="alert alert-success d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+    <div>
+      <?php print_r($messaje);?> <a href="mostrarCarrito.php" class="alert-link">Ver Carrito</a>
+    </div>
   </div>
 </div>
 <?php } ?>
@@ -56,12 +58,12 @@ $buscar_producto=mysqli_query($conn, "SELECT * FROM `productos` WHERE `id_produc
         </div>
         <div class="row">
             <div class="col-1">
-                <img src="<?php echo $img;?>" width="100" alt="">
+                <img src="<?php echo $img;?>" title="<?php echo $nombre." $ ".$precio."";?>" width="100" alt="">
             </div>
             <div class="col" id="foto_product">
                 <div class="img_product_result">
                     <figure>
-                        <a href="#img1"><img src="<?php echo $img;?>" alt="" class="product_img" width="300"></a>
+                        <a href="#img1"><img src="<?php echo $img;?>" alt="" title="<?php echo $descriptions;?>" class="product_img" width="300"></a>
                     </figure>
                 </div>
             </div>
