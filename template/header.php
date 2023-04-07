@@ -80,7 +80,7 @@ if(isset($_SESSION['carrito'])){
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <title>::: Karen Fernanda :::</title>
+    <title id="page-title">::: Karen Fernanda :::</title>
     <script type="text/javascript">
 		window.addEventListener("scroll", function(){
 			var header = document.querySelector("header");
@@ -98,6 +98,19 @@ if(isset($_SESSION['carrito'])){
     <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
   </symbol>
 </svg>
+		<script>
+			let titles = ['::: Moda Mujer :::', '::: Tú Estilo :::', '::: Tú Gusto :::', '::: Karen Fernanda :::'];
+			let i = 0;
+
+			function animateTitle() {
+				document.getElementById('page-title').innerHTML = titles[i];
+				i++;
+				if (i >= titles.length) {
+					i = 0;
+				}
+			}
+			setInterval(animateTitle, 3000);
+		</script>
 </head>
 
 <body>
@@ -129,9 +142,9 @@ if(isset($_SESSION['carrito'])){
           <li>
             <a href="#">'.$name.'</a>
             <ul>
-              <li><a href="#" title="MI PERFIL"><i class="fa fa-user" aria-hidden="true"></i> Mi Perfil</a></li>
-              <li><a href="#" title="VER MIS PEDIDOS"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Pedidos</a></li>
-              <li><a href="setting/config.php" title="IR A MI CONFIGURACIÓN"><i class="fa fa-cog" aria-hidden="true"></i> Config.</a></li>
+              <li><a href="perfil.php" title="MI PERFIL"><i class="fa fa-user" aria-hidden="true"></i> Mi Perfil</a></li>
+              <li><a href="misPedidos.php" title="VER MIS PEDIDOS"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Pedidos</a></li>
+              <li><a href="config.php" title="IR A MI CONFIGURACIÓN"><i class="fa fa-cog" aria-hidden="true"></i> Config.</a></li>
               <li><a href="kafer/logout.php" title="CERRAR SESION"><i class="fa fa-times-circle" aria-hidden="true"></i> Cerrar</a></li>
             </ul>
           </li>';
@@ -140,10 +153,10 @@ if(isset($_SESSION['carrito'])){
           <li>
             <a href="#">'.$name.'</a>
             <ul>
-              <li><a href="setting/perfil.php" title="MI PERFIL"><i class="fa fa-user" aria-hidden="true"></i> Mi Perfil</a></li>
-              <li><a href="setting/misPedidos.php" title="VER MIS PEDIDOS"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Pedidos</a></li>
-              <li><a href="setting/config.php" title="IR A MI CONFIGURACIÓN"><i class="fa fa-cog" aria-hidden="true"></i> Config.</a></li>
-              <li><a href="setting/admin.php" title="ADMINISTRAR SITIO"><i class="fa fa-cogs" aria-hidden="true"></i> Admin</a></li>
+              <li><a href="perfil.php" title="MI PERFIL"><i class="fa fa-user" aria-hidden="true"></i> Mi Perfil</a></li>
+              <li><a href="misPedidos.php" title="VER MIS PEDIDOS"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Pedidos</a></li>
+              <li><a href="config.php" title="IR A MI CONFIGURACIÓN"><i class="fa fa-cog" aria-hidden="true"></i> Config.</a></li>
+              <li><a href="admin.php" title="ADMINISTRAR SITIO"><i class="fa fa-cogs" aria-hidden="true"></i> Admin</a></li>
               <li><a href="kafer/logout.php" title="CERRAR SESION"><i class="fa fa-times-circle" aria-hidden="true"></i> Cerrar</a></li>
             </ul>
           </li>';
@@ -202,9 +215,9 @@ if(isset($_SESSION['carrito'])){
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">'.$name.'</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="setting/perfil.php" title="MI PERFIL"><i class="fa fa-user" aria-hidden="true"></i> Mi Perfil</a></li>
-                  <li><a class="dropdown-item" href="setting/misPedidos.php" title="VER MIS PEDIDOS"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Pedidos</a></li>
-                  <li><a class="dropdown-item" href="setting/config.php" title="IR A MI CONFIGURACIÓN"><i class="fa fa-cog" aria-hidden="true"></i> Config.</a></li>
+                  <li><a class="dropdown-item" href="perfil.php" title="MI PERFIL"><i class="fa fa-user" aria-hidden="true"></i> Mi Perfil</a></li>
+                  <li><a class="dropdown-item" href="misPedidos.php" title="VER MIS PEDIDOS"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Pedidos</a></li>
+                  <li><a class="dropdown-item" href="config.php" title="IR A MI CONFIGURACIÓN"><i class="fa fa-cog" aria-hidden="true"></i> Config.</a></li>
                   <li><a class="dropdown-item" href="kafer/logout.php" title="CERRAR SESION"><i class="fa fa-times-circle" aria-hidden="true"></i> Cerrar</a></li>
                 </ul>
               </li>';
@@ -213,10 +226,10 @@ if(isset($_SESSION['carrito'])){
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">'.$name.'</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="setting/perfil.php" title="MI PERFIL"><i class="fa fa-user" aria-hidden="true"></i> Mi Perfil</a></li>
-                  <li><a class="dropdown-item" href="setting/misPedidos.php" title="VER MIS PEDIDOS"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Pedidos</a></li>
-                  <li><a class="dropdown-item" href="setting/config.php" title="IR A MI CONFIGURACIÓN"><i class="fa fa-cog" aria-hidden="true"></i> Config.</a></li>
-                  <li><a class="dropdown-item" href="setting/admin.php" title="ADMINISTRAR SITIO"><i class="fa fa-cogs" aria-hidden="true"></i> Admin</a></li>
+                  <li><a class="dropdown-item" href="perfil.php" title="MI PERFIL"><i class="fa fa-user" aria-hidden="true"></i> Mi Perfil</a></li>
+                  <li><a class="dropdown-item" href="misPedidos.php" title="VER MIS PEDIDOS"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Mis Pedidos</a></li>
+                  <li><a class="dropdown-item" href="config.php" title="IR A MI CONFIGURACIÓN"><i class="fa fa-cog" aria-hidden="true"></i> Config.</a></li>
+                  <li><a class="dropdown-item" href="admin.php" title="ADMINISTRAR SITIO"><i class="fa fa-cogs" aria-hidden="true"></i> Admin</a></li>
                   <li><a class="dropdown-item" href="kafer/logout.php" title="CERRAR SESION"><i class="fa fa-times-circle" aria-hidden="true"></i> Cerrar</a></li>
                 </ul>
               </li>';            }
