@@ -63,6 +63,7 @@ if(isset($_SESSION['carrito'])){
     <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
     <link rel="manifest" href="img/manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -99,7 +100,7 @@ if(isset($_SESSION['carrito'])){
   </symbol>
 </svg>
 		<script>
-			let titles = ['::: Moda Mujer :::', '::: Tú Estilo :::', '::: Tú Gusto :::', '::: Karen Fernanda :::'];
+			let titles = ['::: Moda Mujer :::', '::: Tú imagen :::', '::: Tú sello personal :::', '::: Karen Fernanda :::'];
 			let i = 0;
 
 			function animateTitle() {
@@ -117,11 +118,11 @@ if(isset($_SESSION['carrito'])){
 <!--Menu principal web-->
 <header>
   <img src="img/logo.png" alt="" width="100" title="KAREN FERNANDA">
-  <a href="#" class="logo">KAREN FERNANDA</a>
+  <a href="#" class="logo animate__animated animate__backInLeft">KAREN FERNANDA</a>
   <nav>
     <ul>
-      <li><a href="index.php">Inicio</a></li>
-      <li><a href="#">Productos</a>
+      <li><a href="index.php" class="animate__animated animate__backInLeft">Inicio</a></li>
+      <li><a href="#" class="animate__animated animate__backInLeft">Productos</a>
           <ul>
             <li><a href="category.php?category=<?php echo openssl_encrypt('ACCESORIOS', COD, KEY);?>">Accesorios</a></li>
             <li><a href="category.php?category=<?php echo openssl_encrypt('BLUSAS', COD, KEY);?>">Blusas</a></li>
@@ -133,9 +134,9 @@ if(isset($_SESSION['carrito'])){
             <li><a href="category.php?category=<?php echo openssl_encrypt('TEJIDOS', COD, KEY);?>">Tejidos</a></li>
           </ul>      
         </li>
-      <li><a href="#">Servicios</a></li>
-      <li><a href="#">Portafolio</a></li>
-      <li><a href="contac.php">Contacto</a></li>
+      <li><a href="#" class="animate__animated animate__backInLeft">Servicios</a></li>
+      <li><a href="#" class="animate__animated animate__backInLeft">Portafolio</a></li>
+      <li><a href="contac.php" class="animate__animated animate__backInLeft">Contacto</a></li>
       <?php
       if($perfil == 'cliente'){
           echo '
