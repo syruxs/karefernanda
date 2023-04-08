@@ -12,42 +12,44 @@ if(isset($_POST['btnAccion'])){
             /*VALIDAMOS LA ID DEL PRODUCTO*/
             if(is_numeric(openssl_decrypt($_POST['ref'],COD,KEY))){
                 $ID=openssl_decrypt($_POST['ref'],COD,KEY);
-                $messaje.="OK ID correcto".$ID."<br>";
+                /*$messaje.="OK ID correcto".$ID."<br>";*/
             }else{
                 $messaje.="Upss... ID incorrecto".$ID."<br>"; break;
             }
             /*VALIDAMOS EL NOMBRE DEL PRODUCTO*/
             if(is_string(openssl_decrypt($_POST['titulo'],COD,KEY))){
                 $NOMBRE=openssl_decrypt($_POST['titulo'],COD,KEY);
-                $messaje.="OK nombre correcto".$NOMBRE."<br>";
+                /*$messaje.="OK nombre correcto".$NOMBRE."<br>";*/
             }else{  
                 $messaje.="Upss... algo pasa con el nombre"; break;
             }
             /*VALIDAMOS EL PRECIO DEL PRODUCTO*/
             if(is_numeric(openssl_decrypt($_POST['precio'],COD,KEY))){
                 $PRECIO=openssl_decrypt($_POST['precio'],COD,KEY);
-                $messaje.="OK precio correcto".$PRECIO."<br>";
+                /*$messaje.="OK precio correcto".$PRECIO."<br>";*/
             }else{ 
                 $messaje.="Upss... algo pasa con el precio"; break;
             }
             /*VALIDAMOS LA CANTIDAD DEL PRODUCTO*/
             if(is_numeric($_POST['cantidad'])){
                 $CANTIDAD=$_POST['cantidad'];
-                $messaje.="OK cantidad correcto".$CANTIDAD."<br>";
+                /*$messaje.="OK cantidad correcto".$CANTIDAD."<br>";*/
             }else{
                 $messaje.="Upss... algo pasa con la cantidad"; break;
             }
             /*VALIDAMOS LA TALLA DEL PRODUCTO*/
-            if(is_string($_POST['talla'])){
+            if($_POST['talla'] != ""){
                 $TALLA=$_POST['talla'];
-                $messaje.="OK talla correcto".$TALLA."<br>";
+                /*$messaje.="OK talla correcto".$TALLA."<br>";*/
             }else{
-                $messaje.="Upss... algo pasa con la talla"; break;
+                echo '<script>swal("Error de Sistema!", "Debes seleccionar una Talla para continuar!", "error");</script>';
+                /*$messaje.="Upss... algo pasa con la talla";*/
+                break;
             }
             /*VALIDAMOS LA IMAGEN*/
             if(is_string(openssl_decrypt($_POST['img'],COD,KEY))){
                 $IMAGEN=openssl_decrypt($_POST['img'],COD,KEY);
-                $messaje.="OK imagen correcto".$IMAGEN."<br>";
+                /*$messaje.="OK imagen correcto".$IMAGEN."<br>";*/
             }else{
                 $messaje.="Upss... algo pasa con la imagen"; break;
             }
@@ -70,7 +72,7 @@ if(isset($_POST['btnAccion'])){
                     $idProductos=array_column($_SESSION['CARRITO'],"ID");
     
                     if(in_array($ID,$idProductos)){
-                        echo "<script>alert('El producto ya ha sido seleccionado...')</script>";
+                        echo '<script>swal("Bien Hecho!", "Tú producto ya ha sido agregado a tu carrito!", "success");</script>';
                         $messaje="";
                     }else{
     
@@ -98,6 +100,8 @@ if(isset($_POST['btnAccion'])){
                     if($producto['ID']==$ID){
                         unset($_SESSION['CARRITO'][$indice]);
                         echo "<script>alert('Elemento Eliminado ...')</script>";
+                        echo '<script>swal("Bien Hecho!", "Tú producto ha sido eliminado de tu carrito!", "warning");</script>';
+                        
                     }
                 }
             }else{

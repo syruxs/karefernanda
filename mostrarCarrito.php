@@ -121,5 +121,6 @@ include("cart.php");
        }
 }
 </style>
+<script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>

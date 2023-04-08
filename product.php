@@ -5,10 +5,10 @@
   include("kafer/fer.php");
   require("cart.php");
 
-$id=$_POST['id'];
+$id=openssl_decrypt($_GET['id'],COD,KEY);
 
 if($ID == ''){
-  $Id=$_POST['id'];
+  $Id=openssl_decrypt($_GET['id'],COD,KEY);
 }else{
   $Id=$ID;
 }
@@ -110,14 +110,15 @@ $buscar_producto=mysqli_query($conn, "SELECT * FROM `productos` WHERE `id_produc
                   <input type="hidden" name="titulo" value="<?php echo openssl_encrypt($nombre, COD, KEY);?>">
                   <input type="hidden" name="precio" value="<?php echo openssl_encrypt($Precio, COD, KEY);?>">
                   <input type="hidden" name="cantidad" class="count" value="1">
-                  <input type="hidden" name="talla" value="">
-                  <input type="hidden" name="stock" value="">
+                  <input type="hidden" name="talla" id="talla" value="">
+                  <input type="hidden" name="stock" id="stock" value="">
                   <button class="btn btn-primary" type="submit" name="btnAccion" value="Agregar" title="AÑADIR PRODUCTO AL CARRITO"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Añadir al carrito</button>
                 </form>
             </div>
         </div>
     </div>
 </section>
+<br>
 <div class="separator">
   <span>OTRAS OPCIONES PARA TI</span>
   <hr>
