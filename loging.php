@@ -29,8 +29,8 @@
                         </a>                    
                     </td>
                     <td>
-                        <a href="">
-                          <button type="submit" name="registrarse">REGISTRARSE</button>
+                        <a href="register.php">
+                          <button type="button" name="registrarse">REGISTRARSE</button>
                         </a>                    
                     </td>
                 </tr>
