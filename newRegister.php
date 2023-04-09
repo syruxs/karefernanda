@@ -19,22 +19,31 @@
     $permiso = "cliente";
     $estado = "activo";
 
-    $ingresar = mysqli_query($conn, "INSERT INTO `user`
-           (`name`, `email`, `fono`, `permiso`, `user`, `pass`, `estado`) 
-    VALUES ('$nombre', '$correo', '$fono', '$permiso', '$user','$pass', '$estado')");
+    $buscar = mysqli_query($conn, "SELECT * FROM `user` WHERE `user` = '$user' OR `email` = '$correo'");
+    $count = mysqli_num_rows($buscar);
 
-        if ($ingresar && mysqli_affected_rows($conn) > 0) {
-            // La inserción fue exitosa
-            echo '<script>
-                    swal("Bien Hecho!", "Tú registro ha sido ingresado exitosamente!", "success");
-                  </script>';
-        } else {
-            // La inserción falló
-            echo '<script>
-                    swal("Fallo en el Registro!", "Tú registro no ha podido ser ingresado!", "error");
-                  </script>';
-        }
+    if ($count > 0) {
+        echo '<script>
+                swal("Usuario ya existe!", "El usuario o correo ya existe!", "error");
+              </script>';
+        exit();
+    }else{
+        $ingresar = mysqli_query($conn, "INSERT INTO `user`
+        (`name`, `email`, `fono`, `permiso`, `user`, `pass`, `estado`) 
+ VALUES ('$nombre', '$correo', '$fono', '$permiso', '$user','$pass', '$estado')");
+
+     if ($ingresar && mysqli_affected_rows($conn) > 0) {
+         // La inserción fue exitosa
+         echo '<script>
+                 swal("Bien Hecho!", "Tú registro ha sido ingresado exitosamente!", "success");
+               </script>';
+     } else {
+         // La inserción falló
+         echo '<script>
+                 swal("Fallo en el Registro!", "Tú registro no ha podido ser ingresado!", "error");
+               </script>';
+     }
+  }
     ?>
-
 </body>
 </html>
