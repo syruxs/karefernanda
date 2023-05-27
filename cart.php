@@ -35,14 +35,16 @@ if(isset($_POST['btnAccion'])){
                 $CANTIDAD=$_POST['cantidad'];
                 /*$messaje.="OK cantidad correcto".$CANTIDAD."<br>";*/
             }else{
-                $messaje.="Upss... algo pasa con la cantidad"; break;
+                /*$messaje.="Upss... algo pasa con la cantidad";*/
+                echo '<script>swal("Error de Sistema!", "Debes seleccionar una CANTIDAD para continuar!", "error");</script>';
+                break;
             }
             /*VALIDAMOS LA TALLA DEL PRODUCTO*/
             if($_POST['talla'] != ""){
                 $TALLA=$_POST['talla'];
                 /*$messaje.="OK talla correcto".$TALLA."<br>";*/
             }else{
-                echo '<script>swal("Error de Sistema!", "Debes seleccionar una Talla para continuar!", "error");</script>';
+                echo '<script>swal("Error de Sistema!", "Debes seleccionar una TALLA para continuar!", "error");</script>';
                 /*$messaje.="Upss... algo pasa con la talla";*/
                 break;
             }
@@ -72,7 +74,7 @@ if(isset($_POST['btnAccion'])){
                     $idProductos=array_column($_SESSION['CARRITO'],"ID");
     
                     if(in_array($ID,$idProductos)){
-                        echo '<script>swal("Bien Hecho!", "Tú producto ya ha sido agregado a tu carrito!", "success");</script>';
+                        echo '<script>swal("Bien Hecho!", "Tú '.$NOMBRE.' ya ha sido agregado a tu carrito!", "success");</script>';
                         $messaje="";
                     }else{
     

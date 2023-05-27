@@ -1,0 +1,54 @@
+{
+    "name": "Karen Fernanda",
+    "short_name": "Karen Fernanda",
+    "description": "Encuentra la moda más exclusiva en nuestra boutique de ropa de mujer. Descubre nuestra selección de prendas de alta calidad y diseños únicos. Desde vestidos elegantes hasta ropa casual, tenemos todo lo que necesitas para destacar. ¡Visítanos hoy mismo y viste con estilo!",
+    "theme_color": "#FFFFFF ",
+    "background_color": "#FFFFFF ",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "./",
+    "start_url": "index.php",
+    "lang": "es-CL",
+    "icons": [
+      {
+        "src": "img/apple-icon-57x57.png",
+        "sizes": "57x57",
+        "type": "image/png"
+      },
+      {
+        "src": "img/apple-icon-72x72.png",
+        "sizes": "72x72",
+        "type": "image/png"
+      },
+      {
+        "src": "img/android-icon-96x96.png",
+        "sizes": "96x96",
+        "type": "image/png"
+      },
+      {
+        "src": "img/apple-icon-144x144.png",
+        "sizes": "144x144",
+        "type": "image/png"
+      },
+      {
+        "src": "img/apple-icon-114x114.png",
+        "sizes": "114x114",
+        "type": "image/png"
+      },
+      {
+        "src": "img/apple-icon-152x152.png",
+        "sizes": "152x152",
+        "type": "image/png"
+      },
+      {
+        "src": "img/android-icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "img/apple-icon-180x180.png",
+        "sizes": "180x180",
+        "type": "image/png"
+      }
+    ]
+  }

@@ -185,8 +185,8 @@ include("kafer/fer.php");
             <div class="capa">
               <h3>'.$row['name'].'</h3>
               <p>'.$row['description'].'</p>
-              <form action="product.php" method="post" id="formulario">
-                <input type="hidden" name="id" value="'.$row['id_product'].'">
+              <form action="product.php" method="get" id="formulario">
+                <input type="hidden" name="id" value="'.openssl_encrypt($row['id_product'], COD, KEY).'">
                 <input class="btn btn-primary" type="submit" value="Ver Producto">
               </form>
             </div>

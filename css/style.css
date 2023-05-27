@@ -623,25 +623,14 @@ input[type="submit"] {
 /* fin galeria category*/
 /*perfil*/
 .perfil{
-    position: absolute;
-    top: 200px;
+    position: relative;
+    top: 220px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70%;
     padding: 30px;
     box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
     border-radius: 10px;
-}
-.img_perfil{
-    position: relative;
-    left: 50%;
-    border-radius: 50%;
-    border: 1px solid black;
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    background-image: url('imgPerfil/yo.jpg');
-    background-size: cover;
 }
 /*fin de perfil*/
 
